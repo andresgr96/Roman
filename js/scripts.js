@@ -1,32 +1,27 @@
-// Program should return true for years divisible by 4
-var leapyear = function(year) {
-  if  ((year % 4 === 0) && (year % 100 != 0) || (year % 400 === 0)) {
-    return true;
+var numerals1s = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+var numerals10s = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+var numerals100s = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+var numerals1000s = ["", "M", "MM", "MMM"];
+
+var romanNumber = function(number) {
+
+
+
 }
-  else {
-    return false;
-  }
-}
+
+
 
 $(document).ready(function() {
-  $("#leap-year").submit(function(event) {
+  $("#numberInput").submit(function(event) {
     event.preventDefault();
 
-    var year = parseInt($("input#year").val());
-    var result = leapyear(year);
-    console.log(result);
+    var number = parseInt($(".number").val());
 
+    if (isNaN(number)) {
 
-    $(".year").text(year);
-
-    if (result === false) {
-      $(".not").text("not");
+      console.log("This is not a number");
 
     }
 
-    else {
-      $(".not").text("");
-    }
-    $("#result").show();
   });
 });
